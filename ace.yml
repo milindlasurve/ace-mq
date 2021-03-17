@@ -96,5 +96,3 @@ spec:
       - name: volume-5
         persistentVolumeClaim:
           claimName: ace-dev-ace-ecollection-data-pvc-nfs
-
-  updatedReplicas: 1
