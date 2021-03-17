@@ -38,7 +38,7 @@ spec:
           value: LQM.IXC
         - name: MQSI_PERSISTENT_MONITORING_EVENTS
           value: "1"
-        image: registry.ixpress.icicibank.com:5000/ibm-ace-gold-prod
+        image: docker-registry/ibm-ace-gold-prod
         imagePullPolicy: Always
         name: ace-prod-ecollection
         ports:
@@ -73,10 +73,6 @@ spec:
         - mountPath: /mnt/mqm
           name: volume-5
       dnsPolicy: ClusterFirst
-      hostAliases:
-      - hostnames:
-        - icici-elk.apps.nonprod.iciciltd.com
-        ip: 172.19.65.72
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
@@ -100,22 +96,5 @@ spec:
       - name: volume-5
         persistentVolumeClaim:
           claimName: ace-dev-ace-ecollection-data-pvc-nfs
-status:
-  availableReplicas: 1
-  conditions:
-  - lastTransitionTime: 2020-07-27T06:59:01Z
-    lastUpdateTime: 2020-07-27T06:59:01Z
-    message: Deployment has minimum availability.
-    reason: MinimumReplicasAvailable
-    status: "True"
-    type: Available
-  - lastTransitionTime: 2020-07-27T06:59:01Z
-    lastUpdateTime: 2021-02-19T11:57:43Z
-    message: ReplicaSet "ace-prod-ecollection-56c597d65b" has successfully progressed.
-    reason: NewReplicaSetAvailable
-    status: "True"
-    type: Progressing
-  observedGeneration: 12
-  readyReplicas: 1
-  replicas: 1
+
   updatedReplicas: 1
