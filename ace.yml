@@ -2,16 +2,10 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: "10"
-  creationTimestamp: 2020-07-27T06:59:01Z
-  generation: 12
   labels:
     app: ace-prod-ecollection
   name: ace-prod-ecollection
-  namespace: ixc-sit
-  resourceVersion: "146103417"
-  selfLink: /apis/extensions/v1beta1/namespaces/ixc-sit/deployments/ace-prod-ecollection
-  uid: a6ec558f-cfd6-11ea-82c0-000d3af2f6a6
+  namespace: ace-mq
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
